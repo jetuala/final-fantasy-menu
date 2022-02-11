@@ -1,9 +1,11 @@
 import React from 'react';
 
-const SearchResults = () => {
+const SearchResults = (results) => {
+    console.log(results);
+    // It's trying to render this component before it gets the response back from the API!!! DUH
     return (
         <div>
-            Select Search Results Window
+            Search Results
         </div>
     )
 }

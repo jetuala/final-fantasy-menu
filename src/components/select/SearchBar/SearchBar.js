@@ -2,19 +2,23 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import SearchResults from '../SearchResults/SearchResults';
 
-const moogleAPI = "http://moogleapi.com/api/v1/characters/";
+const moogleAPI = "https://www.moogleapi.com/api/v1/characters/search?name=";
 
 const SearchBar = () => {
-    const [searchValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState('Kain');
+    let results = {};
 
     useEffect(() => {
-        console.log(searchValue);
-        getCharacterData(searchValue);
+        results = getCharacterData(searchValue);
     })
 
     async function getCharacterData() {
-        const response = await axios.get(`${moogleAPI}/${searchValue}`)
-            .then((response) => {console.log(response)})
+        const response = await axios.get(`${moogleAPI}` + searchValue, {
+            headers: {'Access-Control-Allow-Origin': '*'}
+            })
+            .then(response => {
+                console.log(response.data);
+            })
             .catch(error => {console.log(error)})
     }
 
@@ -24,7 +28,7 @@ const SearchBar = () => {
                 placeholder={'Search...'}
                 onChange={(e) => setSearchValue(e.target.value)}
             />
-            <SearchResults />
+            <SearchResults props={results} />
             {/* pass down props instead of up through select component */}
         </div>
     )
