@@ -6,27 +6,21 @@ const moogleAPI = "https://www.moogleapi.com/api/v1/characters/search?name=";
 
 const SearchBar = () => {
     const [searchValue, setSearchValue] = useState('Kain');
-    const searchRef = useRef();
-
-    function assignLi(data) {
-        data.forEach(({name, job, age}) => {
-            return (
-                <li>{name} {job} {age}</li>
-            )
-        }) // HOW DO I GET THIS INTO SEARCHREF??? LOL
-    }
+    const [listItems, setListItems] = useState([]);
+    let results = [{name: "something initial"}];
 
     useEffect(() => {
-        let results = {};
-        results = getCharacterData(searchValue); // make API call and assign response to eventual display component
-    })
+        // every time the input changes, this runs. First it should make an API call with the value of the input and put the results into a const
+        getCharacterData(searchValue);
+        // this isn't working. First off, it's returning a Promise. Then, it's not putting getCharacterData into results, and I don't know why
+    }, [searchValue])
 
     async function getCharacterData() {
         await axios.get(`${moogleAPI}` + searchValue, {
                 headers: {'Access-Control-Allow-Origin': '*'}
             })
             .then(res => {
-                assignLi(res.data);
+                setListItems(res.data);
             })
             .catch(error => {console.log(error)})
     }
@@ -39,7 +33,11 @@ const SearchBar = () => {
             />
             <div>
                 <ul>
-                    <div ref={searchRef}></div>
+                    {listItems.map((listItem) => {
+                        return (
+                            <li key={listItem.id}>{listItem.name} {listItem.job} {listItem.age} {listItem.origin}</li>
+                        )
+                    })}
                 </ul>
             </div>
         </div>
