@@ -1,18 +1,19 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import SearchResults from '../SearchResults/SearchResults';
 
 const moogleAPI = "https://www.moogleapi.com/api/v1/characters/search?name=";
 
 const SearchBar = () => {
-    const [searchValue, setSearchValue] = useState('Kain');
+    const [searchValue, setSearchValue] = useState('');
     const [listItems, setListItems] = useState([]);
-    let results = [{name: "something initial"}];
+    const firstUpdate = useRef(true);
 
     useEffect(() => {
-        // every time the input changes, this runs. First it should make an API call with the value of the input and put the results into a const
+        if (firstUpdate.current) {
+            firstUpdate.current = false;
+            return;
+        }
         getCharacterData(searchValue);
-        // this isn't working. First off, it's returning a Promise. Then, it's not putting getCharacterData into results, and I don't know why
     }, [searchValue])
 
     async function getCharacterData() {
@@ -29,8 +30,14 @@ const SearchBar = () => {
         <div>
             <input 
                 placeholder={'Search...'}
-                onChange={(e) => setSearchValue(e.target.value)}
+                onChange={(e) => {
+                    if (e.target.value.length < 1) {
+                        setListItems([]);
+                    } else {
+                    setSearchValue(e.target.value.replace(/\s/g, ''))
+                }}}
             />
+            {/* Unfortunately, the input can be super slow. Look into controlled vs uncontrolled components? or maybe useMemo?? */}
             <div>
                 <ul>
                     {listItems.map((listItem) => {

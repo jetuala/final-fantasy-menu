@@ -8,6 +8,7 @@ const Menu = () => {
             <ul>
                 <li><Link to="/party">Party</Link></li>
                 <li><Link to="/status">Status</Link></li>
+                {/* Remember to definitely use e.preventDefault() here to allow for selection of character from Party window!! */}
                 <li><Link to="/config">Config</Link></li>
             </ul>
         </div>
