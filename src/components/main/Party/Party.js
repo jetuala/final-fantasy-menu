@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './Party.css';
 
 // This is the "main" Party window, not to be confused with the "select" Party window.
 
@@ -8,7 +9,7 @@ const Party = (props) => {
 
     return (
         <ul>
-            {party.map(x => {return <li key={x.id}>Name: {x.name} Job: {x.job} Age: {x.age}</li>})}
+            {party.map(x => {return <li className="color" key={x.id}>Name: {x.name} Job: {x.job} Age: {x.age}</li>})}
         </ul>
     )
 }

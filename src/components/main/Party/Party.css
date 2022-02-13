@@ -1,0 +1,19 @@
+body {
+
+}
+
+.color {
+    background-color: #325ca8;
+    color: white;
+}
+
+ul {
+    border-style: groove;
+    border-color: white;
+    border-radius: 5px;
+}
+
+li {
+    list-style: none;
+    padding: 50px;
+}
