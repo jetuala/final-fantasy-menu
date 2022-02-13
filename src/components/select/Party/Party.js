@@ -1,19 +1,21 @@
 import React from 'react';
-import initialState from '../../../store/store';
+import { connect } from 'react-redux';
 
 // This component is different from the main Party component. Probably will just contain pictures of party members
 
-const Party = () => {
-
-    const initialParty = initialState.party;
-
+const Party = (props) => {
+    const party = props.party
     return (
         <div>
             <ul>
-            {initialParty.map(x => {return <li key={x.key}>Name: {x.name} Job: {x.job} Age: {x.age}</li>})}
+                {party.map(x => {return <li key={x.id}>Name: {x.name}</li>})}
             </ul>
         </div>
     )
 }
 
-export default Party;
+const mapStateToProps = state => {
+    return {party: state.party}
+}
+
+export default connect(mapStateToProps)(Party);

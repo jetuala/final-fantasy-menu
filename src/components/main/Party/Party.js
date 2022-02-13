@@ -1,16 +1,20 @@
 import React from 'react';
-import initialState from '../../../store/store';
+import { connect } from 'react-redux';
 
-const Party = () => {
-    
-    const initialParty = initialState.party;
-    // Yay! This works! Now you gotta work on updating state from the moogleAPI :)
+// This is the "main" Party window, not to be confused with the "select" Party window.
+
+const Party = (props) => {
+    const party = props.party;
 
     return (
         <ul>
-            {initialParty.map(x => {return <li key={x.key}>Name: {x.name} Job: {x.job} Age: {x.age}</li>})}
+            {party.map(x => {return <li key={x.id}>Name: {x.name} Job: {x.job} Age: {x.age}</li>})}
         </ul>
     )
 }
 
-export default Party;
+const mapStateToProps = state => {
+    return {party: state.party}
+}
+
+export default connect(mapStateToProps)(Party);
