@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
+import './SearchBar.css';
 
 const moogleAPI = "https://www.moogleapi.com/api/v1/characters/search?name=";
 
@@ -26,6 +27,10 @@ const SearchBar = () => {
             .catch(error => {console.log(error)})
     }
 
+    function addToParty(listItem) {
+        console.log(listItem.name); // yay this works lol gotta figure out reducers!!!
+    }
+
     return (
         <div>
             <input 
@@ -42,7 +47,9 @@ const SearchBar = () => {
                 <ul>
                     {listItems.map((listItem) => {
                         return (
-                            <li key={listItem.id}>{listItem.name} {listItem.job} {listItem.age} {listItem.origin}</li>
+                            <li className="searchBarResult" key={listItem.id} onClick={() => addToParty(listItem)}>
+                                {listItem.name} {listItem.job} {listItem.age} {listItem.origin}
+                            </li>
                         )
                     })}
                 </ul>

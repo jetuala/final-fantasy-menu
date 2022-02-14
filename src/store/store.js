@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+import { createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
     party: [{
@@ -134,7 +135,7 @@ const initialState = {
 function partyReducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_PARTY_MEMBER':
-            return state // "+ payload" "CONCAT" will change this eventually
+            return {...state, party: [ ...state.party, action.payload]}// "+ payload" "CONCAT" will change this eventually... maybe use Redux Toolkit??
         case 'DELETE_PARTY_MEMBER':
             return state // "- payload" "SLICE" or whatever. will change this eventually
         default:

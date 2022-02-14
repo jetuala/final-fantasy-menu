@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './Party.css';
+import './MainParty.css';
 
 // This is the "main" Party window, not to be confused with the "select" Party window.
 
-const Party = (props) => {
+const MainParty = (props) => {
     const party = props.party;
 
     return (
@@ -18,4 +18,4 @@ const mapStateToProps = state => {
     return {party: state.party}
 }
 
-export default connect(mapStateToProps)(Party);
+export default connect(mapStateToProps)(MainParty);
