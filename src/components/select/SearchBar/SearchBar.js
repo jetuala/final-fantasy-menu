@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import './SearchBar.css';
+import { useDispatch } from 'react-redux';
+import { addPartyMember } from '../../../store/store';
 
 const moogleAPI = "https://www.moogleapi.com/api/v1/characters/search?name=";
 
@@ -8,14 +10,7 @@ const SearchBar = () => {
     const [searchValue, setSearchValue] = useState('');
     const [listItems, setListItems] = useState([]);
     const firstUpdate = useRef(true);
-
-    useEffect(() => {
-        if (firstUpdate.current) {
-            firstUpdate.current = false;
-            return;
-        }
-        getCharacterData(searchValue);
-    }, [searchValue])
+    const dispatch = useDispatch();
 
     async function getCharacterData() {
         await axios.get(`${moogleAPI}` + searchValue, {
@@ -27,8 +22,17 @@ const SearchBar = () => {
             .catch(error => {console.log(error)})
     }
 
+    useEffect(() => {
+        if (firstUpdate.current) {
+            firstUpdate.current = false;
+            return;
+        }
+        getCharacterData(searchValue);
+    }, [searchValue])
+
     function addToParty(listItem) {
         console.log(listItem.name); // yay this works lol gotta figure out reducers!!!
+        dispatch(addPartyMember(listItem));
     }
 
     return (
