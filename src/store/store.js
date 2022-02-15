@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import { createAction, createReducer } from '@reduxjs/toolkit';
+import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
     party: [{
@@ -132,17 +132,22 @@ const initialState = {
     windowColor: "blue",
 }
 
-function partyReducer(state = initialState, action) {
-    switch (action.type) {
-        case 'ADD_PARTY_MEMBER':
-            return {...state, party: [ ...state.party, action.payload]}// "+ payload" "CONCAT" will change this eventually... maybe use Redux Toolkit??
-        case 'DELETE_PARTY_MEMBER':
-            return state // "- payload" "SLICE" or whatever. will change this eventually
-        default:
-            return state
-    }
-}
+const addPartyMember = createAction('party/add');
+const deletePartyMember = createAction('party/delete'); 
 
-const store = createStore(partyReducer);
+const partyReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(addPartyMember, (state, action) => {
+      const member = action.payload
+      return [...state, member]
+    })
+    .addCase(deletePartyMember, (state, action) => {
+      return state.filter((member, i) => i !== action.payload.index); //I don't think this is gonna work LOL
+    })
+})
+
+const store = configureStore({
+  reducer: partyReducer
+});
 
 export default store;
