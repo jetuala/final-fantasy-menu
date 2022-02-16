@@ -10,7 +10,7 @@ const partySlice = createSlice({
     },
     deletePartyMember: (state, action) => {
       state.party.splice(state.party.findIndex((x) => x.id === action.payload), 1
-      ); // this isn't right yet, figure it out tomorrow
+      );
     }
   }
 })

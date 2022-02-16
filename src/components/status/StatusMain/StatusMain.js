@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Main = () => {
+const StatusMain = () => {
     return (
         <div>
             Status Main Window
@@ -8,4 +8,4 @@ const Main = () => {
     )
 }
 
-export default Main;
+export default StatusMain;

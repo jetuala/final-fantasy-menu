@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../components/status/Header/Header';
-import Main from '../components/status/Main/Main';
+import StatusMain from '../components/status/StatusMain/StatusMain';
 
 const StatusView = () => {
     return (
         <div>
             <Header />
-            <Main />
+            <StatusMain />
         </div>
     )
 }
