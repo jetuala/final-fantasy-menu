@@ -9,7 +9,8 @@ const partySlice = createSlice({
       state.party.push(action.payload);
     },
     deletePartyMember: (state, action) => {
-      state.party.filter(() => {}); // this isn't right yet, figure it out tomorrow
+      state.party.splice(state.party.findIndex((x) => x.id === action.payload), 1
+      ); // this isn't right yet, figure it out tomorrow
     }
   }
 })

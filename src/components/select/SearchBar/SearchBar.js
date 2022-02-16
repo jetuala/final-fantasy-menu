@@ -31,7 +31,6 @@ const SearchBar = () => {
     }, [searchValue])
 
     function addToParty(listItem) {
-        console.log(listItem.name); // yay this works lol gotta figure out reducers!!!
         dispatch(addPartyMember(listItem));
     }
 
