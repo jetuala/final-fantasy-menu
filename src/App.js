@@ -11,7 +11,7 @@ function App() {
       <Routes>
           <Route exact path="*" element={<MainView />}></Route>
           <Route path="party" element={<SelectView />}>Party</Route>
-          <Route path="status/:id" element={<StatusView currentPartyMember={} />}>Status</Route>
+          <Route path="status" element={<StatusView />}>Status</Route>
           <Route path="config" element={<ConfigView />}>Config</Route>
       </Routes>
     </div>
