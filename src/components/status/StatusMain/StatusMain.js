@@ -5,7 +5,6 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const StatusMain = () => {
     const party = useSelector(state => state.party.party);
     const [ currentMember, setCurrentMember ] = useState(0);
-    // hmm... should I use just a local state number? Or a global state number?
     
     function arrowLeft() {
         if (currentMember === 0) {
@@ -26,6 +25,7 @@ const StatusMain = () => {
     return (
         <div>
             <FaArrowLeft onClick={() => arrowLeft()} />
+            {/* I might put a Home icon in here as well */}
             {party[currentMember].name}
             <FaArrowRight onClick={() => arrowRight()} />
         </div>
