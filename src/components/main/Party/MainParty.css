@@ -2,9 +2,11 @@ body {
 
 }
 
-.color {
+.block {
     background-color: #325ca8;
     color: white;
+    padding: 30px;
+    margin: 10px;
 }
 
 ul {

@@ -127,7 +127,6 @@ const initialState = {
         "stats": []
       }],
     windowColor: "blue",
-    currentPartyMemberIndex: 0,
 }
 
 export default initialState;
