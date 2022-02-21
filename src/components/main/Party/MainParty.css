@@ -1,21 +1,16 @@
-body {
-
-}
-
-.block {
+.mainPartyWindow {
     background-color: #325ca8;
-    color: white;
-    padding: 30px;
-    margin: 10px;
-}
-
-ul {
     border-style: groove;
     border-color: white;
     border-radius: 5px;
 }
 
+.character {
+    color: white;
+    padding: 30px;
+    background-color: #325ddd;
+}
+
 li {
     list-style: none;
-    padding: 50px;
 }

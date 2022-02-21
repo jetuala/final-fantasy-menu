@@ -7,7 +7,7 @@ import './MainParty.css';
 
 // This is the "main" Party window, not to be confused with the "select" Party window.
 
-function Character({ name, index, moveListItem }) {
+function Character({ img, name, job, age, index, moveListItem }) {
     // medium.com/nmc-techblog/easy-drag-and-drop-in-react-22778b30ba37
 
     // this item is draggable
@@ -53,8 +53,8 @@ function Character({ name, index, moveListItem }) {
     const opacity = isDragging ? 0 : 1
 
     return (
-        <div className="characterDrag block" style={{ opacity }} ref={dragDropRef}>
-            {name}
+        <div className="characterDrag character" style={{ opacity }} ref={dragDropRef}>
+            <img src={img} /> {name} {job} {age}
         </div>
     )
 }
@@ -64,16 +64,17 @@ const MainParty = () => {
     const dispatch = useDispatch();
 
     return (
-        
+        <div className="mainPartyWindow">
             <ul>
                 {party.map((x, index) => {
                     return (
-                        <Character key={x.id} index={index} name={x.name} moveListItem={(dragIndex, hoverIndex) => dispatch(reorderParty({dragIndex, hoverIndex}))}>
-                            <Link to={"/status"}>Name: {x.name} Job: {x.job} Age: {x.age}</Link>
+                        <Character key={x.id} index={index} img={x.pictures[0].url} name={x.name} job={x.job} age={x.age} moveListItem={(dragIndex, hoverIndex) => dispatch(reorderParty({dragIndex, hoverIndex}))}>
+                            {/* Don't want to prop drill here. Also, Link doesn't work in this context, move it up to the return statement of Character */}
                         </Character>
                     )}
                 )}
             </ul>
+        </div>
     )
 }
 
