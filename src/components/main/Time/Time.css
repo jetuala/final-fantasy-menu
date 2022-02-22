@@ -3,4 +3,9 @@
     grid-column-end: end;
     grid-row-start: line2;
     grid-row-end: line3;
+    background-color: #325ca8;
+    border-style: groove;
+    border-color: white;
+    border-radius: 15px;
+    border-width: 5px;
 }
