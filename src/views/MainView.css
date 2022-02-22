@@ -1,0 +1,5 @@
+.container {
+    display: grid;
+    grid-template-columns: [margin1] 10% [line1] 90%;
+    grid-template-rows: [margin1] 2% [line1] 5% [line2] 66% [line3] 80% [line4] 90% [margin2] 98%;
+}

@@ -1,11 +1,15 @@
 .mainPartyWindow {
+    grid-column-start: margin1;
+    grid-column-end: line1;
     background-color: #325ca8;
     border-style: groove;
     border-color: white;
-    border-radius: 5px;
+    border-radius: 15px;
+    border-width: 5px;
 }
 
 .character {
+    width: 80%;
     color: white;
     padding: 30px;
     background-color: #325ddd;
@@ -14,3 +18,5 @@
 li {
     list-style: none;
 }
+
+/* Must have viewport of at least 600px wide */
