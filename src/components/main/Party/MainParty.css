@@ -1,6 +1,8 @@
 .mainPartyWindow {
     grid-column-start: margin1;
-    grid-column-end: line1;
+    grid-column-end: margin2;
+    grid-row-start: line1;
+    grid-row-end: margin2;
     background-color: #325ca8;
     border-style: groove;
     border-color: white;

@@ -1,8 +1,9 @@
 import React from 'react';
+import './Time.css';
 
 const Time = () => {
     return (
-        <div>
+        <div className="Time">
             Time
         </div>
     )

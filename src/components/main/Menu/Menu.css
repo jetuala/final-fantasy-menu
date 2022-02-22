@@ -1,0 +1,6 @@
+.MainMenu {
+    grid-column-start: margin2;
+    grid-column-end: end;
+    grid-row-start: margin1;
+    grid-row-end: line2;
+}

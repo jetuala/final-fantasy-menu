@@ -1,5 +1,6 @@
 .container {
+    height: 100vh;
     display: grid;
-    grid-template-columns: [margin1] 10% [line1] 90%;
-    grid-template-rows: [margin1] 2% [line1] 5% [line2] 66% [line3] 80% [line4] 90% [margin2] 98%;
+    grid-template-columns: 2% [margin1] 78% [margin2] 20% [end];
+    grid-template-rows: 2% [margin1] 3% [line1] 75% [line2] 5% [line3] 5% [margin2] 10%;
 }
