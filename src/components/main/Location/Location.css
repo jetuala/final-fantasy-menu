@@ -1,5 +1,6 @@
 .Location {
-    grid-column-start: margin2;
+    grid-column-start: mid;
+    grid-column-end: end;
     grid-row-start: line3;
     grid-row-end: margin2;
     background-color: #325ca8;

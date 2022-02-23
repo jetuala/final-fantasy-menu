@@ -1,5 +1,11 @@
+@font-face {
+  font-family: Reactor7;
+  src: url(Reactor7.woff);
+}
+
 .App {
   text-align: center;
+  font-family: Reactor7;
 }
 
 .App-logo {

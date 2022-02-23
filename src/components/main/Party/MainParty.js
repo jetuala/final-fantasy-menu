@@ -54,7 +54,7 @@ function Character({ img, name, job, age, index, moveListItem }) {
 
     return (
         <div className="characterDrag character" style={{ opacity }} ref={dragDropRef}>
-            <img src={img} /> {name} {job} {age}
+            <div className="characterImg"><img src={img} /></div> <div className="col1">{name} {job}</div> <div className="col2">{age}</div>
         </div>
     )
 }
@@ -65,7 +65,7 @@ const MainParty = () => {
 
     return (
         <div className="mainPartyWindow">
-            <ul>
+            
                 {party.map((x, index) => {
                     return (
                         <Character key={x.id} index={index} img={x.pictures[0].url} name={x.name} job={x.job} age={x.age} moveListItem={(dragIndex, hoverIndex) => dispatch(reorderParty({dragIndex, hoverIndex}))}>
@@ -73,7 +73,7 @@ const MainParty = () => {
                         </Character>
                     )}
                 )}
-            </ul>
+            
         </div>
     )
 }
