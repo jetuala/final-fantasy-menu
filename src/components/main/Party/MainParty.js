@@ -54,7 +54,15 @@ function Character({ img, name, job, age, index, moveListItem }) {
 
     return (
         <div className="characterDrag character" style={{ opacity }} ref={dragDropRef}>
-            <div className="characterImg"><img src={img} /></div> <div className="col1">{name} {job}</div> <div className="col2">{age}</div>
+            <figure>
+                <img src={img} /> 
+            </figure>
+            <div className="col1">
+                {name} {job}
+            </div> 
+            <div className="col2">
+                {age}
+            </div>
         </div>
     )
 }

@@ -15,24 +15,33 @@
 }
 
 .character {
-    flex-basis: 20%;
+    height: 20%;
+    max-height: 20%;
     /* I think the problem below is due to the statement above. */ 
     width: 80%;
     color: white;
     background-color: #325ddd;
     display: grid;
     grid-template-columns: 2% [margin1] 18% [imgmargin col1start] 25% [col1end col2start] 25% [col2end];
+    grid-template-rows: 0% 100%;
 }
 
-.characterImg {
-    align-items: stretch;
-}
-
-.characterImg img {
-    height: 100%;
-    max-height: 100%;
+.character figure {
+    display: flex;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: margin1;
+    grid-column-end: imgmargin;
     /* Neither of these are working. Trying to get the img to fill 100% of the height of the container (Character), which in turn is always 20% of its parent (MainParty). */
     /* It works when the image is SMALLER than its parent container, but not when the image is LARGER than its parent container (e.g. Lightning) */
+}
+
+.character figure img {
+    display: block;
+    object-fit: scale-down;
+    max-width: 100%;
+    flex: 1;
+    min-height: 0;
 }
 
 .col1 {
