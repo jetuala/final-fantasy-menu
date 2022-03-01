@@ -54,14 +54,16 @@ function Character({ img, name, job, age, index, moveListItem }) {
 
     return (
         <div className="characterDrag character" style={{ opacity }} ref={dragDropRef}>
-            <figure>
+            
                 <img src={img} /> 
-            </figure>
+
             <div className="col1">
-                {name} {job}
+                {name} <br/>
+                Job: {job}
             </div> 
             <div className="col2">
-                {age}
+                Age: {age}
+                <progress value="100" max="100">100</progress>
             </div>
         </div>
     )
@@ -72,7 +74,7 @@ const MainParty = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="mainPartyWindow">
+        <div className="mainPartyWindow window">
             
                 {party.map((x, index) => {
                     return (

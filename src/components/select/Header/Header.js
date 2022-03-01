@@ -4,7 +4,7 @@ import { FaHome } from 'react-icons/fa';
 
 const Header = () => {
     return (
-        <div>
+        <div className="window">
             Select Header
             <Link to="/">
                 <FaHome />

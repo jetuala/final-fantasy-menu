@@ -14,7 +14,7 @@ const SelectParty = () => {
     }
 
     return (
-        <div>
+        <div className="window">
             <ul>
                 {party.map(x => {
                     return <li className="color" key={x.id} onClick={() => deleteFromParty(x.id)}>Name: {x.name}</li>})}

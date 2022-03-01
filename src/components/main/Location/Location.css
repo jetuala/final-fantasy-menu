@@ -9,3 +9,8 @@
     border-radius: 15px;
     border-width: 5px;
 }
+
+.locationtext {
+    padding-top: 25px;
+    color: white;
+}

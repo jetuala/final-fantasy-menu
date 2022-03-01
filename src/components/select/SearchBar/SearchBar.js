@@ -35,7 +35,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div>
+        <div className="window">
             <input 
                 placeholder={'Search...'}
                 onChange={(e) => {

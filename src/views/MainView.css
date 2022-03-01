@@ -1,6 +1,8 @@
 .container {
-    height: 100vh;
+    width: 1300px;
+    height: 850px;
+    margin: auto;
     display: grid;
-    grid-template-columns: 2% [margin1] 48% [mid] 28% [margin2] 18% [end] 2%;
+    grid-template-columns: 2% [margin1] 48% [mid] 26% [overlap1] 4% [overlap2] 16% [end] 2%;
     grid-template-rows: 2% [margin1] 3% [line1] 45% [mid] 25% [line2] 10% [line3] 5% [mainend] 5% [margin2] 10%;
 }

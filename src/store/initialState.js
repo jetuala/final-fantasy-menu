@@ -89,7 +89,7 @@ const initialState = {
         "age": "19",
         "gender": "Female",
         "race": "Human",
-        "job": "Whtie Mage",
+        "job": "White Mage",
         "height": "1.68",
         "weight": "47",
         "origin": "Final Fantasy IV",

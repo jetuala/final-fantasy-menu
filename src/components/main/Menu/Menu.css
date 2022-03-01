@@ -1,11 +1,20 @@
 .MainMenu {
-    grid-column-start: margin2;
+    grid-column-start: overlap1;
     grid-column-end: end;
     grid-row-start: margin1;
     grid-row-end: mid;
-    background-color: #325ca8;
-    border-style: groove;
-    border-color: white;
-    border-radius: 15px;
-    border-width: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding-top: 30px;
+}
+
+li a, a:visited {
+    text-decoration: none;
+    color: white;
 }

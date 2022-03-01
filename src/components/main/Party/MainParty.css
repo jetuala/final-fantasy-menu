@@ -1,6 +1,6 @@
 .mainPartyWindow {
     grid-column-start: margin1;
-    grid-column-end: margin2;
+    grid-column-end: overlap2;
     grid-row-start: line1;
     grid-row-end: mainend;
     background-color: #325ca8;
@@ -19,29 +19,31 @@
     max-height: 20%;
     /* I think the problem below is due to the statement above. */ 
     width: 80%;
+    margin-left: 40px;
     color: white;
-    background-color: #325ddd;
     display: grid;
     grid-template-columns: 2% [margin1] 18% [imgmargin col1start] 25% [col1end col2start] 25% [col2end];
     grid-template-rows: 0% 100%;
 }
 
-.character figure {
-    display: flex;
-    grid-row-start: 2;
-    grid-row-end: 3;
+.character img {
+    display: block;
+    height: 110px;
+    width: 110px;
+    align-items: center;
+    padding-top: 16px;
     grid-column-start: margin1;
     grid-column-end: imgmargin;
     /* Neither of these are working. Trying to get the img to fill 100% of the height of the container (Character), which in turn is always 20% of its parent (MainParty). */
     /* It works when the image is SMALLER than its parent container, but not when the image is LARGER than its parent container (e.g. Lightning) */
 }
 
-.character figure img {
-    display: block;
-    object-fit: scale-down;
-    max-width: 100%;
-    flex: 1;
-    min-height: 0;
+/* .character figure img {
+
+} */
+
+.col1, .col2 {
+    padding-top: 20px;
 }
 
 .col1 {

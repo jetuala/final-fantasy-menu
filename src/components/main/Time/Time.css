@@ -1,5 +1,5 @@
 .Time {
-    grid-column-start: margin2;
+    grid-column-start: overlap1;
     grid-column-end: end;
     grid-row-start: line2;
     grid-row-end: line3;
@@ -8,4 +8,9 @@
     border-color: white;
     border-radius: 15px;
     border-width: 5px;
+}
+
+.timetext {
+    padding-top: 25px;
+    color: white;
 }
