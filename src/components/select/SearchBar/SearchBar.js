@@ -48,7 +48,7 @@ const SearchBar = () => {
             {/* Unfortunately, the input can be super slow. Look into controlled vs uncontrolled components? or maybe useMemo?? */}
             <div>
                 <ul>
-                    {listItems.length === 0 ? (<div>Sorry, no results found.</div>)
+                    {listItems.hasOwnProperty("message") ? (<div>Couldn't find that character.</div>)
                         : listItems.map((listItem) => {
                             return (
                                 <li className="searchBarResult" key={listItem.id} onClick={() => addToParty(listItem)}>

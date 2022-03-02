@@ -125,8 +125,7 @@ const initialState = {
           }
         ],
         "stats": []
-      }],
-    windowColor: "blue",
+      }]
 }
 
 export default initialState;
