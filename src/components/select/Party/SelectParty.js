@@ -9,18 +9,24 @@ const SelectParty = () => {
     const party = useSelector(state => state.party.party)
     const dispatch = useDispatch();
 
-    function deleteFromParty(listItem) {
-        dispatch(deletePartyMember(listItem));
+    function deleteFromParty(id, name) {
+        if (window.confirm("Delete " + name + " from party?")) {
+            dispatch(deletePartyMember(id));
+        } else {
+            return;
+        }
     }
 
     return (
-        <div className="window">
+        <div className="window selectParty">
             <ul>
                 {party.map(x => {
-                    return <li className="color" key={x.id} onClick={() => deleteFromParty(x.id)}>Name: {x.name}</li>})}
+                    return <li key={x.id} onClick={() => deleteFromParty(x.id, x.name)}><img src={x.pictures[0].url} /> {x.name}</li>})}
             </ul>
         </div>
     )
 }
 
 export default SelectParty;
+
+// function (x.id, x.name) {deleteFromParty(x.id, x.name)}

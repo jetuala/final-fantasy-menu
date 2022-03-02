@@ -1,0 +1,8 @@
+.selectContainer {
+    width: 1300px;
+    height: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0 [start] 10% [col1] 30% [mid] 60% [end];
+    grid-template-rows: 0 [top] 10% [row1] 30% [row2] 60% [bottom];
+}

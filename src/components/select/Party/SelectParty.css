@@ -1,0 +1,11 @@
+.selectParty {
+    grid-column-start: start;
+    grid-column-end: mid;
+    grid-row-start: row1;
+    grid-row-end: bottom;
+}
+
+.selectParty img {
+    height: 100px;
+    width: 100px;
+}

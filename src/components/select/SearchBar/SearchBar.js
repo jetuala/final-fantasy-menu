@@ -35,7 +35,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div className="window">
+        <div className="window searchBar">
             <input 
                 placeholder={'Search...'}
                 onChange={(e) => {
@@ -48,12 +48,13 @@ const SearchBar = () => {
             {/* Unfortunately, the input can be super slow. Look into controlled vs uncontrolled components? or maybe useMemo?? */}
             <div>
                 <ul>
-                    {listItems.map((listItem) => {
-                        return (
-                            <li className="searchBarResult" key={listItem.id} onClick={() => addToParty(listItem)}>
-                                {listItem.name} {listItem.job} {listItem.age} {listItem.origin}
-                            </li>
-                        )
+                    {listItems.length === 0 ? (<div>Sorry, no results found.</div>)
+                        : listItems.map((listItem) => {
+                            return (
+                                <li className="searchBarResult" key={listItem.id} onClick={() => addToParty(listItem)}>
+                                    {listItem.name} {listItem.job} {listItem.age} {listItem.origin}
+                                </li>
+                            )
                     })}
                 </ul>
             </div>

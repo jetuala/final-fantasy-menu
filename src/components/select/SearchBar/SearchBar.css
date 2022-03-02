@@ -1,3 +1,10 @@
+.searchBar {
+    grid-column-start: mid;
+    grid-column-end: end;
+    grid-row-start: row1;
+    grid-row-end: bottom;
+}
+
 .searchBarResult {
     color: white;
     padding: 10px;
