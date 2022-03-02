@@ -12,7 +12,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className="window selectHeader">
-                Choose party members here.
+                Add or delete party members here.
             </div>
         </>
     )

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 import './SearchBar.css';
 import { useDispatch } from 'react-redux';
@@ -11,6 +12,7 @@ const SearchBar = () => {
     const [listItems, setListItems] = useState([]);
     const firstUpdate = useRef(true);
     const dispatch = useDispatch();
+    const party = useSelector(state => state.party.party)
 
     async function getCharacterData() {
         await axios.get(`${moogleAPI}` + searchValue, {
@@ -31,7 +33,11 @@ const SearchBar = () => {
     }, [searchValue])
 
     function addToParty(listItem) {
-        dispatch(addPartyMember(listItem));
+        if (party.length >= 5) {
+            window.alert("Party cannot be larger than 5 members.");
+        } else {
+            dispatch(addPartyMember(listItem));
+        }
     }
 
     return (
@@ -48,7 +54,7 @@ const SearchBar = () => {
             {/* Unfortunately, the input can be super slow. Look into controlled vs uncontrolled components? or maybe useMemo?? */}
             <div>
                 <ul>
-                    {listItems.hasOwnProperty("message") ? (<div>Couldn't find that character.</div>)
+                    {listItems.hasOwnProperty("message") ? (<div>Couldn't find that character.</div>) // API returns object with single property: "message" when it can't find a character
                         : listItems.map((listItem) => {
                             return (
                                 <li className="searchBarResult" key={listItem.id} onClick={() => addToParty(listItem)}>
