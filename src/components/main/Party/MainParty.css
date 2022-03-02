@@ -38,10 +38,6 @@
     /* It works when the image is SMALLER than its parent container, but not when the image is LARGER than its parent container (e.g. Lightning) */
 }
 
-/* .character figure img {
-
-} */
-
 .col1, .col2 {
     padding-top: 20px;
 }

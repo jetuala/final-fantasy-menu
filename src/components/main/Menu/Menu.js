@@ -7,7 +7,7 @@ const Menu = () => {
         <div className="MainMenu window">
             <ul>
                 <li><Link to="/party">Party</Link></li>
-                <li><Link to="/status">Status</Link></li>
+                <li>Status</li>
                 {/* Will have to use Link to={{pathname: ``}, maybe?*/}
                 {/* Remember to definitely use e.preventDefault() here to allow for selection of character from Party window!! */}
                 <li><Link to="/config">Config</Link></li>

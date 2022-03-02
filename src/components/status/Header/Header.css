@@ -1,0 +1,15 @@
+.statusHome {
+    grid-column-start: start;
+    grid-column-end: col1;
+    grid-row-start: top;
+    grid-row-end: row1;
+    padding-top: 15px;
+}
+
+.statusHeader {
+    grid-column-start: col1;
+    grid-column-end: end;
+    grid-row-start: top;
+    grid-row-end: row1;
+    padding-top: 25px;
+}

@@ -53,19 +53,19 @@ function Character({ img, name, job, age, index, moveListItem }) {
     const opacity = isDragging ? 0 : 1
 
     return (
-        <div className="characterDrag character" style={{ opacity }} ref={dragDropRef}>
-            
+        <Link to="/status" props="1"> {/* getIndexOf */}
+            <div className="characterDrag character" style={{ opacity }} ref={dragDropRef}>
                 <img src={img} /> 
-
-            <div className="col1">
-                {name} <br/>
-                Job: {job}
-            </div> 
-            <div className="col2">
-                Age: {age}
-                <progress value="100" max="100">100</progress>
+                <div className="col1">
+                    {name} <br/>
+                    Job: {job}
+                </div> 
+                <div className="col2">
+                    Age: {age}
+                    <progress value="100" max="100">100</progress>
+                </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
