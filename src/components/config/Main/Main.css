@@ -1,0 +1,11 @@
+.configMain {
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: row1;
+    grid-row-end: bottom;
+}
+
+.chrome-picker {
+    margin: auto;
+    margin-top: 50px;
+}

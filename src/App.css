@@ -3,6 +3,10 @@
   src: url(Reactor7.woff);
 }
 
+:root {
+  --main-bg-color: #325ca8;
+}
+
 .App {
   text-align: center;
   font-family: Reactor7;
@@ -10,7 +14,7 @@
 }
 
 .window {
-  background: linear-gradient(135deg, #325ca8, black);
+  background: linear-gradient(135deg, var(--main-bg-color), black);
   border-style: groove;
   border-color: white;
   border-radius: 15px;
