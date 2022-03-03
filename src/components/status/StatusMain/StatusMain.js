@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import './StatusMain.css';
 import StatusCharacter from '../StatusCharacter/StatusCharacter';
-import { current } from '@reduxjs/toolkit';
 
 const StatusMain = () => {
     const party = useSelector(state => state.party.party);
@@ -28,10 +27,18 @@ const StatusMain = () => {
 
     return (
         <div className="statusMain window">
-            <FaArrowLeft onClick={() => arrowLeft()} />
+            <div className="leftarrow">
+                <div className="arrow">
+                    <FaArrowLeft onClick={() => arrowLeft()} />
+                </div>
+            </div>
             {/* separate Component??? */}
-            <StatusCharacter character={party[currentMember]} />
-            <FaArrowRight onClick={() => arrowRight()} />
+            <div className="statusCharacter">
+                <StatusCharacter character={party[currentMember]} />
+            </div>
+            <div className="rightarrow">
+                <FaArrowRight className="arrow" onClick={() => arrowRight()} />
+            </div>
         </div>
     )
 }

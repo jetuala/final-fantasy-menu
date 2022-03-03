@@ -1,0 +1,29 @@
+.statusCharacterContainer {
+    display: grid;
+    grid-template-columns: 0 [start] 25% [mid] 75% [end];
+    grid-template-rows: 0 [top] 100% [bottom];
+    grid-column-gap: 20px;
+}
+
+.statCol1 {
+    grid-column-start: start;
+    grid-column-end: mid;
+    grid-row-start: top;
+    grid-row-end: bottom;
+    padding-top: 40px;
+}
+
+.statCol1 img {
+    height: 150px;
+    width: 150px;
+}
+
+.statCol2 {
+    grid-column-start: mid;
+    grid-column-end: end;
+    padding: 50px 20px 0 20px;
+}
+
+p {
+    margin: 20px 0 20px 0;
+}

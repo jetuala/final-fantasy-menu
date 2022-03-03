@@ -12,7 +12,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className="window selectHeader">
-                Add or delete party members here.
+                Click to add or delete. Drag and drop to reorder party. 
             </div>
         </>
     )

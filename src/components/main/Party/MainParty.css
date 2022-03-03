@@ -14,6 +14,10 @@
     justify-content: center;
 }
 
+.characterLink {
+    text-decoration: none;
+}
+
 .character {
     height: 20%;
     max-height: 20%;
