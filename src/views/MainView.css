@@ -6,3 +6,9 @@
     grid-template-columns: 2% [margin1] 48% [mid] 26% [overlap1] 4% [overlap2] 16% [end] 2%;
     grid-template-rows: 2% [margin1] 3% [line1] 45% [mid] 25% [line2] 10% [line3] 5% [mainend] 5% [margin2] 10%;
 }
+
+@media (max-width: 1300px) {
+    .container {
+        display: none;
+    }
+}

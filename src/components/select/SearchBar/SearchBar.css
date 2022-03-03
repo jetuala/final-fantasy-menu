@@ -3,10 +3,16 @@
     grid-column-end: end;
     grid-row-start: row1;
     grid-row-end: bottom;
+    overflow-y: auto;
 }
 
 .searchBarResult {
     color: white;
     padding: 10px;
     margin: 2px;
+}
+
+.searchBarResult img {
+    height: 100px;
+    width: 100px;
 }

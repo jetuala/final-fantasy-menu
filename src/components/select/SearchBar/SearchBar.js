@@ -58,7 +58,7 @@ const SearchBar = () => {
                         : listItems.map((listItem) => {
                             return (
                                 <li className="searchBarResult" key={listItem.id} onClick={() => addToParty(listItem)}>
-                                    {listItem.name} {listItem.job} {listItem.age} {listItem.origin}
+                                    <img src={listItem.pictures[0].url} alt={listItem.name} /> {listItem.name} {listItem.origin}
                                 </li>
                             )
                     })}

@@ -55,7 +55,7 @@ const SelectCharacter = ({img, name, index, moveListItem}) => {
 
     return (
         <div style={{ opacity }} ref={dragDropRef} >
-            <img src={img} alt={name} /> {name}
+            <img src={img} alt={name} />
         </div>
     )
 
