@@ -38,7 +38,7 @@
     ]
   },
   "devDependencies": {
-    "@reduxjs/toolkit": "^1.7.2",
+    "@reduxjs/toolkit": "^1.8.0",
     "font-awesome": "^4.7.0",
     "react-color": "^2.19.3",
     "react-dnd": "^15.1.1",
