@@ -7,9 +7,11 @@ import Responsive from '../components/responsive/Responsive';
 const StatusView = () => {
     return (
         <>
-            <div className="statusContainer">
-                <Header />
-                <StatusMain />
+            <div className='black'>
+                <div className="statusContainer">
+                    <Header />
+                    <StatusMain />
+                </div>
             </div>
             <Responsive />
         </>

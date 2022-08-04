@@ -12,10 +12,12 @@ const SelectView = () => {
     return (
         <>
             <DndProvider backend={HTML5Backend}>
-                <div className="selectContainer">
-                    <Header />
-                    <SelectParty />
-                    <SearchBar />
+                <div className='black'>
+                    <div className="selectContainer">
+                        <Header />
+                        <SelectParty />
+                        <SearchBar />
+                    </div>
                 </div>
             </DndProvider>
             <Responsive />

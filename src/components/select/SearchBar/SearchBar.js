@@ -45,7 +45,7 @@ const SearchBar = () => {
             <input 
                 placeholder={'Search...'}
                 onChange={(e) => {
-                    if (e.target.value.length < 1) {
+                    if (e.target.value.length < 3) {
                         setListItems([]);
                     } else {
                     setSearchValue(e.target.value.replace(/\s/g, ''))
@@ -58,7 +58,7 @@ const SearchBar = () => {
                         : listItems.map((listItem) => {
                             return (
                                 <li className="searchBarResult" key={listItem.id} onClick={() => addToParty(listItem)}>
-                                    {listItem.name} {listItem.origin}
+                                    <img src={listItem.pictures[0].url} alt={listItem.name} /> {listItem.name} {listItem.origin}
                                 </li>
                             )
                     })}

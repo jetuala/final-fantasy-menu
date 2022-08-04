@@ -7,9 +7,11 @@ import Responsive from '../components/responsive/Responsive';
 const ConfigView = () => {
     return (
         <>
-            <div className="configContainer">
-                <Header />
-                <Main />
+            <div className='black'>
+                <div className="configContainer">
+                    <Header />
+                    <Main />
+                </div>
             </div>
             <Responsive />
         </>

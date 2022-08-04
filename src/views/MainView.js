@@ -11,11 +11,13 @@ import './MainView.css';
 const MainView = () => {
     return (
         <>
-            <div className="container">
-                <MainParty />
-                <Menu />
-                <Location />
-                <Time />
+            <div className="black">
+                <div className="container">
+                    <MainParty />
+                    <Menu />
+                    <Location />
+                    <Time />
+                </div>
             </div>
             <Responsive />
         </>

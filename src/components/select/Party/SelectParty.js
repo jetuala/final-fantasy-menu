@@ -67,7 +67,11 @@ const SelectParty = ({index, moveListItem}) => {
 
     function deleteFromParty(id, name) {
         if (window.confirm("Delete " + name + " from party?")) {
-            dispatch(deletePartyMember(id));
+            if (party.length <= 1) {
+                alert("Party cannot have less than one member.")
+            } else {
+                dispatch(deletePartyMember(id));
+            }
         } else {
             return;
         }
